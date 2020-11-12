@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Video extends Model
+{
+    use HasFactory;
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class,  'commentable');//muchas tranformaciones lo que va aguardar es el nombre del modelo comment
+    }
+
+
+}
